@@ -1,5 +1,5 @@
-using JuMP, Ipopt
-using Random
+using JuMP 
+using Ipopt
 using HTTP
 using Test
 using DataFrames
