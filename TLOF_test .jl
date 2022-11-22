@@ -22,7 +22,7 @@ carbon_uptake_rate=15.902
 sd=0.305667764744552
 
 rxn_names,module_flux=TLOF_Preprocess(flux_estimation)
-c,obj=TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
+c,obj=TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
 
                                                            
 @test isapprox(obj ,9.577185672827648; atol=0.0001)
