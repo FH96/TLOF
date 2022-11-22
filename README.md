@@ -1,6 +1,10 @@
 # TLOF
 Transcription-based Lasso Objective Finder(TLOF) is an optimization based method to obtain a context-specific objective function for a given condition.
 
+## Formulation
+Minimize: ‖𝒗−𝒗_𝒆𝒔𝒕 ‖_𝟐+𝑹∗‖𝒄‖_𝟏
+ 
+
 ## Prerequisites
 TLOF reads SBML models by [SBML.jl](https://github.com/LCSB-BioCore/SBML.jl), models the optimization problem by [JuMP.jl](https://github.com/jump-dev/JuMP.jl) and uses [Ipopt.jl](https://github.com/jump-dev/Ipopt.jl) as the solver. 
 [LinearAlgebra.jl](https://github.com/JuliaLang/julia/blob/master/stdlib/LinearAlgebra/src/LinearAlgebra.jl) is also required in the computations inside the function.
@@ -13,7 +17,7 @@ using Pkg
 Pkg.add("JuMP")
 ```
 ## Usage
-This function can be called simply, by a single line of code:
+This function can be called as follows:
 ```
 TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
 ```
@@ -28,7 +32,8 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 The next two arguements can either be given by the user or assesed by `TLOF_Preprocess` function, provided in this repo.
 
 **module_flux**:Sometimes measuring the flux of a single reactoin is not possible, thus we have measured (or estimated) flux, for example,associated with A-B or A+B where A and B are reactions in metabolic network.     fluxes are not for single reactions, but rather a module of reactions, this functions extracts the name of the reactions and also a matrix (named module flux) whose dot product whith the flux vector yields relation between single reactions and a flux module
-**selected_rxns**
+
+**selected_rxns**: 
 
 **carbon_uptake_rxn**: 
 
