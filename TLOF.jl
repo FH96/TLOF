@@ -7,7 +7,7 @@ using JuMP, Ipopt , SBML , LinearAlgebra
 
 
 
-function TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd=0)
+function TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd=0)
 
     #determining irreversible reactions to set the appropriate boundary
     irreversible_indices=[]
