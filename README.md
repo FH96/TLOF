@@ -38,4 +38,7 @@ The next two arguements can either be given by the user or assesed by `TLOF_Prep
   
   
  #### Output:
-  **flux_vector**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
+
+  **c**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
+  
+  **obj**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector.
