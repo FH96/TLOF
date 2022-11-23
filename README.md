@@ -12,18 +12,17 @@ $$ a_j \geq c_j \quad \forall j \in P$$
 
 $$ a_j \geq -c_j \quad \forall j \in P$$
 
-$$\sum_{j \in P}S_ij v_j=0 \forall i \in N$$
+$$\sum_{j \in P}S_ij v_j=0 \quad \forall i \in N$$
 
 $$v_text{carbon uptake rxn}=text{carbon uptake rate}$$
 
-$$\sum_{i=1}^N u_i S_ij \geq c_j \forall j \in P$$
+$$\sum_{i=1}^N u_i S_ij \geq c_j \quad \forall j \in P$$
 
-$$\sum_{i=1}^N u_i S_ij \geq 0 \forall j \notin P$$
+$$\sum_{i=1}^N u_i S_ij \geq 0 \quad \forall j \notin P , text{carbon uptake rxn}$$
 
-$$\sum_{i=1}^N u_i S_ij \geq c_j \forall j \in P$$
+$$\sum_{i=1}^N u_i S_ij + text{g} \geq 0 \quad \forall j \notin P , text{carbon uptake rxn}$$
 
 
-∑_(iϵ P)▒〖c_j v_j=uptake*g〗
 ....
 
 ## Prerequisites
