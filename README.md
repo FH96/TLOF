@@ -6,7 +6,7 @@ TLOF solves the following optimization problem to find a context-specific object
 
 Minimize:
 
-$$\|| v - v_\text{est} \||_2
+$$\|| v - v_\text{est} \||_2$$
 
 $$\parallel v - v_\text{est} \parallel_2$$
 
