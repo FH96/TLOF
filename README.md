@@ -6,9 +6,9 @@ TLOF solves the following optimization problem to find a context-specific object
 
 Minimize:
 
-$$\| v - v_\text{est} \| <sub>𝟐</sub>$$
+$$\|| v - v_\text{est} \|| <sub>𝟐</sub>$$
 
-$$\parallel v - v_\text{est} \parallel <sub>𝟐</sub>$$
+$$\parallel v - v_\text{est} \parallel_2
 
 ‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1</sub>
 
