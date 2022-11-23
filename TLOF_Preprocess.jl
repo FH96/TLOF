@@ -1,7 +1,7 @@
 """
 When the measured (or estimated) fluxes are not for single reactions, but rather a module of reactions,
 this functions extracts the name of the reactions and also a matrix (named module flux)
-whose dot product whith the flux vector yields relation between single reactions and a flux module   
+whose dot product with the flux vector yields relation between single reactions and a flux module   
 """
 
 using JuMP, Ipopt , SBML
