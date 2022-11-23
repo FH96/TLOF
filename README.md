@@ -7,6 +7,7 @@ TLOF solves the following optimization problem to find a context-specific object
 Minimize: ‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1</sub>
 
 ∑_(iϵ P)▒〖c_j v_j=uptake*g〗
+....
 
 ## Prerequisites
 TLOF reads SBML models by [SBML.jl](https://github.com/LCSB-BioCore/SBML.jl), models the optimization problem by [JuMP.jl](https://github.com/jump-dev/JuMP.jl) and uses [Ipopt.jl](https://github.com/jump-dev/Ipopt.jl) as the solver. 
@@ -26,27 +27,33 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 ```
 
 #### Input:
-  **metabolic model**: metabolic models conatin sotoichiometric matrix above all and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different foramts including .xml. They can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+  **metabolic model**: metabolic models conatin sotoichiometric matrix above all and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
 
   **lambda** : regularization coefficient for the L1 norm term in the objective function of the optimization problem. The larger lambda is, the more sparse the objective functions will be.
   
   **flux_estimation**: is a dataframe (or ?) that has two columns, the first one contains the name of the reactions and the second one flux values
 
-The next two arguements can either be given by the user or assesed by `TLOF_Preprocess` function, provided in this repo.
+*The next two arguements can either be given by the user or assesed by `TLOF_Preprocess` function, provided in this repo.
 
-**module_flux**:Sometimes measuring the flux of a single reactoin is not possible, thus we have measured (or estimated) flux, for example,associated with A-B or A+B where A and B are reactions in metabolic network.     fluxes are not for single reactions, but rather a module of reactions, this functions extracts the name of the reactions and also a matrix (named module flux) whose dot product whith the flux vector yields relation between single reactions and a flux module
+**module_flux**:Sometimes measuring the flux of a single reactoin is not possible, thus we have measured (or estimated) flux, for example,associated with A-B or A+B where A and B are reactions in metabolic network. On the other hand, the optimization problem find flux for single reactions (in that example, A and B seperately ). But in the objective function(see foemulation section above) the difference between measured flux and the corresponding predicted value should be calculated so this `module_flux`  whose dot product whith the predicted flux vector returns the appropriate value for `V`.
 
-**selected_rxns**: 
+**rxn_names**:This arguement is a vector containing the name of the reactions and can be different from the first column of `flux_estimation` according to the explanantions for the previous arguement.
 
-**carbon_uptake_rxn**: 
+**selected_rxns**: A user can define which reactions should be included in potential cellular objective set. This can be either all reactions of the network or any subset of the reactions, defined by their index in the stoichiometric matrix. 
 
-**carbon_uptake_rate**
+**carbon_uptake_rxn**: The name of the reaction through which carbon is uptaken by a cell, for example,"R_"GLCptspp". It should matches with the raaction names of metabolic network. 
 
-**sd**
+**carbon_uptake_rate** : The exchange flux associated with the carbon source, measured experimentally
+
+**sd**: Measurements are usually performed as replicates and the average value is reported, so there is also a standard deviation value. Since problems with inequality constraints converge better, if any value is given to this arguement the capacity constraint....otherwise it will be an equlaity constraint.  
   
   
  #### Output:
 
-  **c**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
+  **c**: It is the objective function found by TLOF and is of type Vector{Float64} (a vector whose elements are Float94), which has the same length as the `selected_reaction`.
+ 
   
-  **obj**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector.
+  **obj**: The optimal value for objective function
+  
+  
+## TLOF_Preprocess usage
