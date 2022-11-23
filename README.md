@@ -6,6 +6,7 @@ TLOF solves the following optimization problem to find a context-specific object
 
 Minimize: ‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1</sub>
 
+$$\sum_{j \in P}c_j v_j$$
 ∑_(iϵ P)▒〖c_j v_j=uptake*g〗
 ....
 
