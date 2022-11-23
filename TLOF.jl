@@ -1,9 +1,11 @@
+"""
+Transcription-based Lasso Objective Finder(TLOF) is an optimization based method
+to obtain a context-specific objective function for a given condition.
 
+"""
 
 using JuMP, Ipopt , SBML , LinearAlgebra
 
-
-# flux_estimation is a dataframe (or ?) that has two columns, the first one contains the name of the reactions and the second one flux values
 
 
 
