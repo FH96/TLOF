@@ -4,15 +4,15 @@ Transcription-based Lasso Objective Finder(TLOF) is an optimization based method
 ## Formulation
 TLOF solves the following optimization problem to find a context-specific objective function
 
-Minimize:
+*Minimize:
 
-$$\|| v - v_\text{est} \||_2$$
 
-$$\parallel v - v_\text{est} \parallel_2$$
 
-‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1</sub>
+$$\parallel v - v_\text{est} \parallel_2 + 𝑹∗\parallel c\parallel_1$$
 
-Subject to:
+
+
+*Subject to:
 
 $$\sum_{j \in P}c_j v_j=\text{carbon uptake rate} \times  \text{g}$$
 
@@ -31,6 +31,7 @@ $$\sum_{i=1}^N u_i S_ij \geq 0 \quad \forall j \notin P , \text{carbon uptake rx
 $$\sum_{i=1}^N u_i S_ij + \text{g} \geq 0 \quad \forall j \notin P , \text{carbon uptake rxn}$$
 
 
+Where  v_\text{est} is the flux estimation , R is regularization coefficient
 ....
 
 ## Prerequisites
