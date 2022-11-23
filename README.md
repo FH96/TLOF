@@ -10,7 +10,13 @@ $$\sum_{j \in P}c_j v_j=\text{carbon uptake rate} \times  \text{g}$$
 
 $$ a_j \geq c_j \\ \forall j \in P$$
 
-$$ a_j \geq -c_j \\ \forall j \in P$$
+$$ a_j \geq -c_j \quad \forall j \in P$$
+
+$$\sum_{j \in P}S_ij v_j=0 \forall i \in N$$
+
+$$v_text{carbon uptake rxn}=text{carbon uptake rate}$$
+
+
 
 ∑_(iϵ P)▒〖c_j v_j=uptake*g〗
 ....
