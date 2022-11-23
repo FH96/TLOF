@@ -14,13 +14,13 @@ $$ a_j \geq -c_j \quad \forall j \in P$$
 
 $$\sum_{j \in P}S_ij v_j=0 \quad \forall i \in N$$
 
-$$v_text{carbon uptake rxn}=text{carbon uptake rate}$$
+$$v_\text{carbon uptake rxn}=\text{carbon uptake rate}$$
 
 $$\sum_{i=1}^N u_i S_ij \geq c_j \quad \forall j \in P$$
 
-$$\sum_{i=1}^N u_i S_ij \geq 0 \quad \forall j \notin P , text{carbon uptake rxn}$$
+$$\sum_{i=1}^N u_i S_ij \geq 0 \quad \forall j \notin P , \text{carbon uptake rxn}$$
 
-$$\sum_{i=1}^N u_i S_ij + text{g} \geq 0 \quad \forall j \notin P , text{carbon uptake rxn}$$
+$$\sum_{i=1}^N u_i S_ij + \text{g} \geq 0 \quad \forall j \notin P , \text{carbon uptake rxn}$$
 
 
 ....
