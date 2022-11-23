@@ -1,10 +1,8 @@
 """
-When the measured (or estimated) fluxes are not for single reactions, but rather a module of reactions,
-this functions extracts the name of the reactions and also a matrix (named module flux)
-which are required ro run TLOF function.  
+When the measured (or estimated) fluxes data which are meant to be used in TLOF function are not for single reactions,
+but rather a module of reactions, this functions extracts the name of the reactions and also a matrix (named module flux)
+which are required to run TLOF function.  
 """
-
-using JuMP, Ipopt , SBML
 
 
 function TLOF_Preprocess(flux_estimation)
@@ -35,7 +33,7 @@ function TLOF_Preprocess(flux_estimation)
     end
    
     
-    #Where flux measurements are not related to a single reaction, but rather a module of reactions 
+     
     module_flux=zeros(Float64,size(flux_estimation,1),size(rxn_names,1))
 
     for n in 1:size(flux_estimation,1)
