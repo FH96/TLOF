@@ -1,12 +1,10 @@
 """
 When the measured (or estimated) fluxes are not for single reactions, but rather a module of reactions,
 this functions extracts the name of the reactions and also a matrix (named module flux)
-whose dot product with the flux vector yields relation between single reactions and a flux module   
+which are required ro run TLOF function.  
 """
 
 using JuMP, Ipopt , SBML
-
-# flux_estimation is a dataframe (or ?) that has two columns, the first one contains the name of the reactions and the second one flux values
 
 
 function TLOF_Preprocess(flux_estimation)
