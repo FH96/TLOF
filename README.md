@@ -3,8 +3,10 @@ Transcription-based Lasso Objective Finder(TLOF) is an optimization based method
 
 ## Formulation
 TLOF solves the following optimization problem to find a context-specific objective function
+
 Minimize: ‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1</sub>
- ∑_(iϵ P)▒〖c_j v_j=uptake*g〗
+
+∑_(iϵ P)▒〖c_j v_j=uptake*g〗
 
 ## Prerequisites
 TLOF reads SBML models by [SBML.jl](https://github.com/LCSB-BioCore/SBML.jl), models the optimization problem by [JuMP.jl](https://github.com/jump-dev/JuMP.jl) and uses [Ipopt.jl](https://github.com/jump-dev/Ipopt.jl) as the solver. 
