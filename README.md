@@ -8,7 +8,7 @@ Minimize: ‖𝒗−𝒗_𝒆𝒔𝒕 ‖<sub>𝟐</sub>+𝑹∗‖𝒄‖<sub>1
 
 $$\sum_{j \in P}c_j v_j=\text{carbon uptake rate} \times  \text{g}$$
 
-$$ a_j \geq c_j \\ \forall j \in P$$
+$$ a_j \geq c_j \quad \forall j \in P$$
 
 $$ a_j \geq -c_j \quad \forall j \in P$$
 
@@ -16,6 +16,11 @@ $$\sum_{j \in P}S_ij v_j=0 \forall i \in N$$
 
 $$v_text{carbon uptake rxn}=text{carbon uptake rate}$$
 
+$$\sum_{i=1}^N u_i S_ij \geq c_j \forall j \in P$$
+
+$$\sum_{i=1}^N u_i S_ij \geq 0 \forall j \notin P$$
+
+$$\sum_{i=1}^N u_i S_ij \geq c_j \forall j \in P$$
 
 
 ∑_(iϵ P)▒〖c_j v_j=uptake*g〗
