@@ -32,7 +32,7 @@ $$\sum_{i=1}^N u_i S_ij + \text{g} \geq 0 \quad \forall j \in \text{carbon uptak
 
 $$v_j \geq 0 \quad \forall j \in I$$
 
-Where  v_est is the flux estimation, v is flux vector, R is regularization coefficient, S is stoichiometric matrix ,  u and g are dual variables , P is the set of reactions considered as “Potential cellular objectives” and *I* is the set of irreversible reactions.
+Where  v<sub>est</sub> is the flux estimation, v is flux vector, R is regularization coefficient, S is stoichiometric matrix ,  u and g are dual variables , P is the set of reactions considered as “Potential cellular objectives” and *I* is the set of irreversible reactions.
 
 
 ## Prerequisites
