@@ -61,7 +61,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 
 *The next two arguments can either be given by the user or assessed by `TLOF_Preprocess` function, provided in this repo.
 
-**module_flux**: Sometimes measuring the flux of a single reaction is not possible, thus we have measured (or estimated) flux, for example, associated with A-B or A+B, where A and B are reactions in metabolic network. On the other hand, the optimization problem finds flux for single reactions (in that example, A and B separately). But in the objective function (see formulation section above), the difference between measured flux and the corresponding predicted value should be calculated so this `module_flux`  whose dot product with the predicted flux vector returns the appropriate value for `V`.
+**module_flux**: Sometimes measuring the flux of a single reaction is not possible, thus we have measured (or estimated) flux, for example, associated with A-B or A+B, where A and B are reactions in metabolic network. On the other hand, the optimization problem finds flux for single reactions (in that example, A and B separately). But in the objective function (see formulation section above), the difference between measured flux and the corresponding predicted value should be calculated so this `module_flux`,  whose dot product with the predicted flux vector returns the appropriate value for `v`, is required to solve the problem.
 
 **rxn_names**: This argument is a vector containing the name of the reactions and can be different from the first column of `flux_estimation` according to the explanations for the previous argument.
 
