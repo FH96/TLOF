@@ -71,7 +71,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 
 **carbon_uptake_rate**: The exchange flux associated with the carbon source, measured experimentally.
 
-**sd**: Measurements are usually performed as replicates and the average value is reported, so there is also a standard deviation value. Since problems with inequality constraints converge better, if any value is given to this argument the capacity constraint will be an inequality constraint, otherwise it will be an equality constraint.  
+**sd**: Measurements are usually performed as replicates and the average value is reported, so there is also a standard deviation value. Since problems with inequality constraints converge better, if any value is given to this argument the capacity constraint will be applied as an inequality constraint, otherwise it will be an equality constraint.  
   
   
  #### Output:
