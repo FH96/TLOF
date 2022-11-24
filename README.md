@@ -53,7 +53,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 ```
 
 #### Input:
-  **metabolic model**: Metabolic models conatin sotoichiometric matrix  and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+  **metabolic model**: Metabolic models contain sotoichiometric matrix  and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
 
   **lambda**: Regularization coefficient for the L1 norm term in the objective function of the optimization problem. The larger lambda is, the more sparse the objective function will be.
   
