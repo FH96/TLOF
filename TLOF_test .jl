@@ -1,4 +1,4 @@
-#This script test both TLOF_Preprocess and TLOF for the example provided below.
+#This script tests both TLOF_Preprocess and TLOF for the example provided below.
 
 using JuMP 
 using Ipopt
