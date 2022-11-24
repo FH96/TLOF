@@ -83,7 +83,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
   
   
 ## TLOF_Preprocess usage
-As it was explained thoroughly for `module_flux` arguement above, this function compute two input data needed to run `TLOF`: 
+As it was explained thoroughly for `module_flux` arguement above, this function computes two input data needed to run `TLOF`: 
 
 ```rxn_names,module_flux=TLOF_Preprocess(flux_estimation)```
 
