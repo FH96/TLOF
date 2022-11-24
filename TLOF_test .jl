@@ -1,3 +1,5 @@
+#This script test both TLOF_Preprocess and TLOF for the example provided below.
+
 using JuMP 
 using Ipopt
 using HTTP
@@ -5,12 +7,12 @@ using Test
 using DataFrames
 using CSV
 
-
+#Downloading the metabolic model
 ecoli_model=HTTP.get("http://bigg.ucsd.edu/static/models/iJO1366.xml")
 write("iJO1366.xml",ecoli_model.body)
 metabolic_model=readSBML("iJO1366.xml")
 
-
+#An example of flux data for *E. coli* to run TLOF
 flux_estimation= CSV.read("flux estimation.csv",DataFrame)
 
 
