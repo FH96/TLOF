@@ -1,5 +1,5 @@
 """
-When the measured (or estimated) fluxes data which are meant to be used in TLOF function are not for single reactions,
+When the measured (or estimated) fluxes which are meant to be used in TLOF function are not for single reactions,
 but rather a module of reactions, this functions extracts the name of the reactions and also a matrix (named module flux)
 which are required to run TLOF function.  
 """
