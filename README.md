@@ -57,7 +57,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 
   **lambda**: Regularization coefficient for the L1 norm term in the objective function of the optimization problem. The larger lambda is, the more sparse the objective function will be.
   
-  **flux_estimation**:It is a dataframe that has two columns, the first one contains the name of the reactions and the second one flux values.
+  **flux_estimation**: It is a dataframe that has two columns, the first one contains the name of the reactions and the second one flux values.
 
 *The next two arguments can either be given by the user or assessed by `TLOF_Preprocess` function, provided in this repo.
 
