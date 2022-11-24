@@ -76,7 +76,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
   
  #### Output:
 
-  **c**: It is the objective function found by TLOF and is of type Vector{Float64} (a vector whose elements are Float94), which has the same length as the `selected_reaction`.
+  **c**: It is the objective function found by TLOF and is of type Vector{Float64} (a vector whose elements are Float64), which has the same length as the `selected_reaction`.
  
   
   **obj**: The optimal value for objective function
