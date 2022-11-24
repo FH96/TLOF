@@ -4,7 +4,7 @@ Transcription-based Lasso Objective Finder(TLOF) is an optimization based method
 ## Formulation
 TLOF solves the following optimization problem to find a context-specific objective function
 
-*Minimize:
+*Minimize:*
 
 
 
@@ -12,7 +12,7 @@ $$\parallel v - v_\text{est} \parallel_2 + 𝑹∗\parallel c\parallel_1$$
 
 
 
-*Subject to:
+*Subject to:*
 
 $$\sum_{j \in P}c_j v_j=\text{carbon uptake rate} \times  \text{g}$$
 
@@ -28,10 +28,11 @@ $$\sum_{i=1}^N u_i S_ij \geq c_j \quad \forall j \in P$$
 
 $$\sum_{i=1}^N u_i S_ij \geq 0 \quad \forall j \notin P , \text{carbon uptake rxn}$$
 
-$$\sum_{i=1}^N u_i S_ij + \text{g} \geq 0 \quad \forall j \notin P , \text{carbon uptake rxn}$$
+$$\sum_{i=1}^N u_i S_ij + \text{g} \geq 0 \quad \forall j \in \text{carbon uptake rxn}$$
 
+$$v_j \geq 0 \quad \forall j \in I$$
 
-Where  v_\text{est} is the flux estimation , R is regularization coefficient
+Where  v_\text{est} is the flux estimation , R is regularization coefficient, S is sotoichiometric matrix ,  u and g are dual variables , P is the set of reactions considered as “Potential cellular objectives” and I is the set of irreversible reactions.
 ....
 
 ## Prerequisites
@@ -52,7 +53,7 @@ TLOF(metabolic_model,lambda,flux_estimation,module_flux,selected_rxns,carbon_upt
 ```
 
 #### Input:
-  **metabolic model**: metabolic models conatin sotoichiometric matrix above all and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+  **metabolic model**: metabolic models conatin sotoichiometric matrix  and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
 
   **lambda** : regularization coefficient for the L1 norm term in the objective function of the optimization problem. The larger lambda is, the more sparse the objective functions will be.
   
