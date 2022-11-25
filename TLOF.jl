@@ -121,7 +121,7 @@ function TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selec
 
     JuMP.optimize!(model)
 
-    #
+    # If the solver terminates without finding the optimal solution, the termination status is printed out for user 
     if JuMP.raw_status(model)!="Solve_Succeeded"
         println(JuMP.termination_status(model))
     
