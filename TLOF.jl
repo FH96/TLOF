@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------------------
 #=
     Purpose:    Obtaining a context-specific objective function
-    Authors:     Fatemeh Heydari - University of Tehran
+    Authors:    Fatemeh Heydari - University of Tehran
                 Mojtaba Tefagh  - Sharif University of Technology 
     Date:       December 2022
 =#
