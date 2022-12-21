@@ -2,7 +2,7 @@
 #=
     Purpose:    Obtaining a context-specific objective function
     Author:      -  - 
-    Date:       September 2022
+    Date:       December 2022
 =#
 
 #-------------------------------------------------------------------------------------------
@@ -14,40 +14,60 @@ Transcription-based Lasso Objective Finder(TLOF) is an optimization based method
 to obtain a context-specific objective function for a given condition.
 
 # INPUTS
-- metabolic model: Metabolic models contain sotoichiometric matrix  and also other informations such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
 
-- lambda: Regularization coefficient for the L1 norm term in the objective function of the optimization problem. The larger lambda, the sparser the objective function.
+- metabolic model:  Metabolic models contain sotoichiometric matrix  and also other informations such as flux boundaries 
+                    and Gene-Protein-Reaction rules. They can be found in different formats including .xml.
+                    Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+
+- lambda:           Regularization coefficient for the L1 norm term in the objective function of the optimization problem.
+                    The larger lambda, the sparser the objective function.
   
-- flux_estimation: It is a dataframe that has two columns, the first one contains the name of the reactions and the second one flux values.
+- flux_estimation:  It is a dataframe that has two columns, the first one contains the name of the reactions
+                    and the second one flux values.
 
 
 *The next two arguments can either be given by the user or assessed by `TLOF_Preprocess` function.
 
-- module_flux: Sometimes measuring the flux of a single reaction is not possible, thus we have measured (or estimated) flux, for example, associated with A-B or A+B, where A and B are reactions in metabolic network. On the other hand, the optimization problem finds flux for single reactions (in that example, A and B separately). But in the objective function (see formulation section above), the difference between measured flux and the corresponding predicted value should be calculated so this `module_flux`,  whose dot product with the predicted flux vector returns the appropriate value for `v`, is required to solve the problem.
 
-- rxn_names: This argument is a vector containing the name of the reactions and can be different from the first column of `flux_estimation` according to the explanations for the previous argument.
+- module_flux:      Sometimes measuring the flux of a single reaction is not possible, thus we have measured (or estimated) flux,
+                    for example, associated with A-B or A+B, where A and B are reactions in metabolic network. On the other hand,
+                    the optimization problem finds flux for single reactions (in that example, A and B separately).
+                    But in the objective function (see formulation section above), the difference between measured flux
+                    and the corresponding predicted value should be calculated so this `module_flux`,
+                    whose dot product with the predicted flux vector returns the appropriate value for `v`,
+                    is required to solve the problem.
 
-- selected_rxns: A user can define which reactions should be included in potential cellular objective set. This can be either all reactions of the network or any subset of the reactions, defined by their index in the stoichiometric matrix. 
+- rxn_names:        This argument is a vector containing the name of the reactions and can be different from the first column of
+                    `flux_estimation` according to the explanations for the previous argument.
 
-- carbon_uptake_rxn: The name of the reaction through which carbon is uptaken by a cell, for example,"R_GLCptspp". It should match with the reaction names of metabolic network. 
+- selected_rxns:    A user can define which reactions should be included in potential cellular objective set.
+                    This can be either all reactions of the network or any subset of the reactions,
+                    defined by their index in the stoichiometric matrix. 
+
+- carbon_uptake_rxn: The name of the reaction through which carbon is uptaken by a cell, for example,"R_GLCptspp".
+                     It should match with the reaction names of metabolic network. 
 
 - carbon_uptake_rate: The exchange flux associated with the carbon source, measured experimentally.
 
 
 # OPTIONAL INPUTS
 
-- sd: Measurements are usually performed as replicates and the average value is reported, so there is also a standard deviation value. Since problems with inequality constraints converge better, if any value is given to this argument the capacity constraint will be applied as an inequality constraint, otherwise it will be an equality constraint.  
+- sd:               Measurements are usually performed as replicates and the average value is reported,
+                    so there is also a standard deviation value. Since problems with inequality constraints converge better,
+                    if any value is given to this argument the capacity constraint will be applied as an inequality constraint,
+                    otherwise it will be an equality constraint.  
 
 # OUTPUTS
 
-- c: It is the objective function found by TLOF and is of type Vector{Float64} (a vector whose elements are Float64), which has the same length as the `selected_reaction`.
+- c:                It is the objective function found by TLOF and is of type Vector{Float64} (a vector whose elements are Float64),
+                    which has the same length as the `selected_reaction`.
   
-- obj: The optimal value for objective function
+- obj:              The optimal value for objective function
 
 
 # EXAMPLES
 
-c,obj=TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
+c,obj = TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
 
 
 
