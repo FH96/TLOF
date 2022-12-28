@@ -66,7 +66,22 @@ to obtain a context-specific objective function for a given condition.
 - obj:              The optimal value for objective function
 
 
+## TLOF_Preprocess usage
+As it was explained thoroughly for `module_flux` arguement above, this function computes two input data needed to run `TLOF`: 
+
+    rxn_names,module_flux=TLOF_Preprocess(flux_estimation)
+
+# Input:
+-flux_estimation:     Just the same as what was mentioned above.
+
+# Output:
+
+ rxn_names and module_flux: As explained earlier, what are needed for TLOF.
+
+
 # EXAMPLES
+
+rxn_names,module_flux=TLOF_Preprocess(flux_estimation)
 
 c,obj = TLOF(metabolic_model,lambda,flux_estimation,module_flux,rxn_names,selected_rxns,carbon_uptake_rxn,carbon_uptake_rate,sd)
 
