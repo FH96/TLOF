@@ -78,6 +78,18 @@ As it was explained thoroughly for `module_flux` arguement above, this function 
 
  rxn_names and module_flux: As explained earlier, what are needed for TLOF.
 
+## TLOF_Preprocess usage
+As it was explained thoroughly for `module_flux` arguement above, this function computes two input data needed to run `TLOF`: 
+
+    rxn_names,module_flux=TLOF_Preprocess(flux_estimation)
+
+# Input:
+- flux_estimation:  Just the same as what was mentioned above.
+
+ #### Output:
+
+  rxn_names and module_flux: As explained earlier, what are needed for TLOF.
+
 
 # EXAMPLES
 
